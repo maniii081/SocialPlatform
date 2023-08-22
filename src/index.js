@@ -1,4 +1,3 @@
-//Lect 20- Makinng socialmedia website using props
 //Props stands of properties.Props are like function arguments in javascript and attributes in HTML
 
 import React from "react";
