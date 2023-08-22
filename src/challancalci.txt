@@ -1,0 +1,94 @@
+//Html code 
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="third"></div>
+    <div id="root"></div>
+
+  </body>
+</html>
+
+
+//JS code 
+
+import React from "react";
+import  ReactDOM  from "react-dom";
+import "./index.css";
+import add from "./app";
+import  {Sub,Div,Mult} from "./app";
+// import "./index.html";
+
+ReactDOM.render(<>
+                 <ol className="calci">
+                    <li><h1>Sum of numbers is {add(10,3)}</h1> </li>    
+                    <li><h1>Subtraction of numbers is {Sub(56,9)}</h1> </li>    
+                    <li><h1>Division of numbers is {Div(33,2)}</h1> </li>    
+                    <li><h1>Multiply of numbers is {Mult(33,2)}</h1> </li>    
+                </ol>   
+    </>
+    ,document.getElementById("third")
+);
+
+//CSS code 
+
+*{
+    /* background-color:bisque; */
+}
+.calci,li{
+    border: 5px solid burlywood;
+    border-radius: 15px;
+    margin:15% 15%;
+    background-color: aquamarine;
+    text-align: center;
+}
+
+//App.jsx code
+
+import React from "react";
+
+function Add(a,b){
+      return(
+        a+b
+      );
+}
+
+function Sub(a,b){
+      return(
+        a-b
+      );
+}
+function Div(a,b){
+      return(
+        a%b
+      );
+}
+function Mult(a,b){
+      return(
+        a*b
+      );
+}
+export default Add;
+export {Sub , Div, Mult};
+
+
+

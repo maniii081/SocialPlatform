@@ -1,0 +1,95 @@
+Creating page which greets according to time
+
+//index.js code 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './app';
+// import {Ant,name} from './app';
+import * as all from './app';
+
+//CHallange three-Creating simple greeting website showing real time 
+//lect-19 converted into component
+
+ReactDOM.render(
+    <App/>,document.getElementById("root")
+);
+
+ReactDOM.render(
+    <>
+    <all.Ant/>
+   {/* <h1 style={{color:'grey'}}> {name}</h1></> */}
+   <h1 style={{color:'grey'}}> {all.name}</h1></>
+,document.getElementById("third")
+);
+
+//app.jsx code
+import React from "react";
+
+function App(){
+
+    let time=new Date();
+    time=time.getHours();
+    let greeting='';
+    if(time>=1 && time<11){
+      greeting=<h1 style={{color:'orange'}}>Good Morning</h1>;
+}
+    else if(time>11 && time<=19){
+    greeting=<h1 style={{color:'green'}}>Good Afternoon</h1>;
+}
+else {
+  greeting=<h1 style={{color:'red'}} >Good Evening</h1>
+}
+
+    return(<>
+        <h1 className='style2'>Hello Bacho,{greeting}</h1>
+        </>
+  );
+    
+}
+function Ant(){
+        const ant={
+          border: '2px solid black',
+          boxSizing: 'border-box',
+          backgroundColor:'aqua',
+          borderRadius:'50%',
+          width: '50%',
+          height: '50%',
+          marginTop:'25%',
+          marginLeft:'25%',
+          marginRight:'25%',
+        };
+        let date=new Date().toLocaleTimeString();
+        return(
+            <h1 style={ant}>Time is  {date}</h1>
+        )
+        
+}
+const name='mani singh';
+
+export  default App;
+export  {Ant,name};
+
+
+//index.css code
+
+*{
+    background-color: #98dccf;
+    text-align: center;
+}
+ .style2{
+    border : 3px solid black;
+    margin: 15% 25% 25% 25%;
+    width: 50%;
+    background-color:#ffe9c5;
+    border-radius:50px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
